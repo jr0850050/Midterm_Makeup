@@ -1,12 +1,12 @@
 <?php
 
-/* if ($url = env('CLEARDB_DATABASE_URL')) {
+if ($url = env('CLEARDB_DATABASE_URL')) {
     $parts = parse_url($url);
     putenv('DB_HOST=' . $parts['host']);
     putenv('DB_USERNAME=' . $parts['user']);
     putenv('DB_PASSWORD=' . $parts['pass']);
     putenv('DB_DATABASE=' . substr($parts['path'], 1));
-} */
+}
 
 return [
 
