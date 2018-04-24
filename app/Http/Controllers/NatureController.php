@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\NatureModel;
 
 class NatureController extends Controller
 {
@@ -13,7 +14,9 @@ class NatureController extends Controller
      */
     public function index()
     {
-        //
+        $nature = nature::all();
+
+        return view('nature.index', compact('nature'));
     }
 
     /**
@@ -23,7 +26,7 @@ class NatureController extends Controller
      */
     public function create()
     {
-        //
+        return view('nature.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class NatureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'type' => 'required',
+            'title' => 'required',
+        ]);
+
+       $nature = nature::Create($request->all());
+
+       return redirect('/nature/', $nature->id);
     }
 
     /**
@@ -43,9 +53,9 @@ class NatureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(nature $nature)
     {
-        //
+        return view('nature.show', compact('nature'));
     }
 
     /**
@@ -54,9 +64,9 @@ class NatureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(nature $nature)
     {
-        //
+        return view('nature.edit', compact('nature'));
     }
 
     /**
@@ -66,9 +76,11 @@ class NatureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, nature $nature)
     {
-        //
+        $nature->update($request->all());
+
+        return redirect('/nature/', $nature->id);
     }
 
     /**
@@ -79,6 +91,8 @@ class NatureController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nature->delete();
+
+        return redirect ('/nature/');
     }
 }

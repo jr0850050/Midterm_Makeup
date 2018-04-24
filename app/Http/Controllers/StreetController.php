@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\StreetModel;
 
 class StreetController extends Controller
 {
@@ -13,7 +14,9 @@ class StreetController extends Controller
      */
     public function index()
     {
-        //
+        $street = street::all();
+
+        return view('street.index', compact('street'));
     }
 
     /**
@@ -23,7 +26,7 @@ class StreetController extends Controller
      */
     public function create()
     {
-        //
+        return view('street.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class StreetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'type' => 'required',
+            'title' => 'required',
+        ]);
+
+       $street = street::Create($request->all());
+
+       return redirect('/street/', $street->id);
     }
 
     /**
@@ -43,9 +53,9 @@ class StreetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(street $street)
     {
-        //
+        return view('street.show', compact('street'));
     }
 
     /**
@@ -54,9 +64,9 @@ class StreetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(street $street)
     {
-        //
+        return view('street.edit', compact('street'));
     }
 
     /**
@@ -66,9 +76,11 @@ class StreetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, street $street)
     {
-        //
+        $street->update($request->all());
+
+        return redirect('/street/', $street->id);
     }
 
     /**
@@ -79,6 +91,8 @@ class StreetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $street->delete();
+
+        return redirect ('/street/');
     }
 }

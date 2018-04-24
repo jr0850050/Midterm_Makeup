@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\StudioModel;
 
 class StudioController extends Controller
 {
@@ -13,7 +14,9 @@ class StudioController extends Controller
      */
     public function index()
     {
-        //
+        $studio = Studio::all();
+
+        return view('Studio.index', compact('studio'));
     }
 
     /**
@@ -23,7 +26,7 @@ class StudioController extends Controller
      */
     public function create()
     {
-        //
+        return view('Studio.create');
     }
 
     /**
@@ -34,7 +37,14 @@ class StudioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'type' => 'required',
+            'title' => 'required',
+        ]);
+
+       $studio = Studio::Create($request->all());
+
+       return redirect('/Studio/', $studio->id);
     }
 
     /**
@@ -43,9 +53,9 @@ class StudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Studio $studio)
     {
-        //
+        return view('studio.show', compact('studio'));
     }
 
     /**
@@ -54,9 +64,9 @@ class StudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Studio $studio)
     {
-        //
+        return view('studio.edit', compact('studio'));
     }
 
     /**
@@ -66,9 +76,11 @@ class StudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Studio $studio)
     {
-        //
+        $studio->update($request->all());
+
+        return redirect('/Studio/', $studio->id);
     }
 
     /**
@@ -79,6 +91,8 @@ class StudioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $studio->delete();
+
+        return redirect ('/studio/');
     }
 }
