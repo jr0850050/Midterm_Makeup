@@ -14,7 +14,7 @@ Copyright 2018
     <meta name="description" content="Welcoming page">
     <meta name="author" content="Joshua Ratliff">
 
-    <title>Josh's Guitar Shop</title>
+    <title>One Page Wonder - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -39,11 +39,11 @@ Copyright 2018
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item @if(Route::is('home')) active @endif">
-              <a class="nav-link" href="{{ route('home') }}">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="nav-item @if(Route::is('guitars.*')) active @endif">
-              <a class="nav-link" href="{{ route('guitars.index') }}">Browse</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Browse</a>
             </li>
           </ul>
         </div>
