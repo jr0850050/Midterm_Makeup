@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::resource('Studio', 'StudioController');
-Route::resource('Street', 'StreetController');
-Route::resource('Nature', 'NatureController');
+Route::resource('Guitars', 'GuitarsController');

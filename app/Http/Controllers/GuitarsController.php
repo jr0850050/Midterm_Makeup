@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\StudioModel;
+use App\guitarsModel;
 
-class StudioController extends Controller
+class guitarsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class StudioController extends Controller
      */
     public function index()
     {
-        $studio = Studio::all();
+        $guitars = guitars::all();
 
-        return view('Studio.index', compact('studio'));
+        return view('guitars.index', compact('guitars'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StudioController extends Controller
      */
     public function create()
     {
-        return view('Studio.create');
+        return view('guitars.create');
     }
 
     /**
@@ -37,14 +37,14 @@ class StudioController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        /* $this->validate($request, [
             'type' => 'required',
             'title' => 'required',
-        ]);
+        ]); */
 
-       $studio = Studio::Create($request->all());
+       $guitars = guitars::Create($request->all());
 
-       return redirect('/Studio/', $studio->id);
+       return redirect('/guitars/', $guitars->id);
     }
 
     /**
@@ -53,9 +53,9 @@ class StudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Studio $studio)
+    public function show(guitars $guitars)
     {
-        return view('studio.show', compact('studio'));
+        return view('guitars.show', compact('guitars'));
     }
 
     /**
@@ -64,9 +64,9 @@ class StudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Studio $studio)
+    public function edit(guitars $guitars)
     {
-        return view('studio.edit', compact('studio'));
+        return view('guitars.edit', compact('guitars'));
     }
 
     /**
@@ -76,11 +76,11 @@ class StudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Studio $studio)
+    public function update(Request $request, guitars $guitars)
     {
-        $studio->update($request->all());
+        $guitars->update($request->all());
 
-        return redirect('/Studio/', $studio->id);
+        return redirect('/guitars/', $guitars->id);
     }
 
     /**
@@ -91,8 +91,8 @@ class StudioController extends Controller
      */
     public function destroy($id)
     {
-        $studio->delete();
+        $guitars->delete();
 
-        return redirect ('/studio/');
+        return redirect ('/guitars/');
     }
 }
