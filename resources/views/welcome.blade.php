@@ -24,7 +24,7 @@ Copyright 2018
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="css/one-page-wonder.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/one-page-wonder.min.css">
 
   </head>
 
