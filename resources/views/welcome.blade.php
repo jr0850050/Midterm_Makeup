@@ -14,10 +14,10 @@ Copyright 2018
     <meta name="description" content="Welcoming page">
     <meta name="author" content="Joshua Ratliff">
 
-    <title>One Page Wonder - Start Bootstrap Template</title>
+    <title>Josh's Guitar Shop</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -43,7 +43,7 @@ Copyright 2018
               <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Browse</a>
+              <a class="nav-link" href="{{ route('guuitars.index') }}">Browse</a>
             </li>
           </ul>
         </div>
