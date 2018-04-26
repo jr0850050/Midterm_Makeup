@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\guitarsModel;
+use App\Product;
 
-class guitarsController extends Controller
+class GuitarsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class guitarsController extends Controller
      */
     public function index()
     {
-        $guitars = guitars::all();
+        $products = Product::all();
 
-        return view('guitars.index', compact('guitars'));
+        return view('Guitars.index', compact('products'));
     }
 
     /**

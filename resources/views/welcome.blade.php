@@ -17,14 +17,14 @@ Copyright 2018
     <title>Josh's Guitar Shop</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
+    <link rel="stylesheet" type="text/css" href="/css/one-page-wonder.css">
 
   </head>
 
