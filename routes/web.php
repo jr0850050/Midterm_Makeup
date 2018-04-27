@@ -16,3 +16,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('guitars', 'GuitarsController');
+Route::resource('orders', 'OrdersController');

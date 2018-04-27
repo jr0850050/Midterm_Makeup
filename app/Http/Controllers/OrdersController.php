@@ -63,9 +63,9 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $orders)
+    public function edit(Order $order)
     {
-        return view('orders.edit', compact('orders'));
+        return view('orders.edit', compact('order'));
     }
 
     /**

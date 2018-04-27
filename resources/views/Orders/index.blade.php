@@ -62,6 +62,7 @@
                     <tr>
                         <td>{{ $order->orderID }}</td>
                         <td>{{ $order->customerID }}</td>
+                        <td>{{ $order->orderDate }}</td>
                         <td>{{ $order->shipAmount }}</td>
                         <td>{{ $order->taxAmount }}</td>
                         <td>{{ $order->shipDate }}</td>

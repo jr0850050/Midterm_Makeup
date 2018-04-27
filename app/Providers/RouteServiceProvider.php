@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Product;
+use App\Order;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -27,6 +28,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('guitar', Product::class);
+        Route::model('order', Order::class);
     }
 
     /**
