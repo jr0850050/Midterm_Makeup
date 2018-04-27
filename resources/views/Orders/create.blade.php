@@ -46,7 +46,7 @@
        <h3 class="panel-title">New order</h3>
    </div>
    <div class="panel-body">
-       <form action="/guitars" method="post">
+       <form action="/orders" method="post">
            <input type="hidden" name="_method" value="post">
            {{ csrf_field() }}
            
@@ -103,7 +103,6 @@
            <button class="btn btn-primary pull-right">Save new order!</button>
        </form>
 
-   
    </div>
 </div>
 </html>

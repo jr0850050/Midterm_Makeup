@@ -42,7 +42,7 @@
         <h3 class="panel-title">Edit order</h3>
     </div>
     <div class="panel-body">
-        <form action="/guitars/{{ $product->productID }}" method="post">
+        <form action="/orders/{{ $order->orderID }}" method="post">
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             
