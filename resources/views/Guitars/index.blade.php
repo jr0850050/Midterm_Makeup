@@ -57,7 +57,7 @@
                         <td>{{ $product->productName }}</td>
                         <td>{{ $product->listPrice }}</td>
                         <td>
-                            <a href="/Guitars/{{ $product->productID }}/edit" class="btn btn-xs btn-info">
+                            <a href="/guitars/{{ $product->productID }}/edit" class="btn btn-xs btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>
