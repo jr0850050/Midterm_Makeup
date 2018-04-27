@@ -42,7 +42,7 @@
 
     {{ $orders->toJson() }}
 
-   <form action="/guitars/{{ $products->productID }}" method="post">
+   <form action="/guitars/{{ $orders->orderID }}" method="post">
     <input type="hidden" name="_method" value="delete">
     {{ csrf_field() }}
 

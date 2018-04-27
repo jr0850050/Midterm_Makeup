@@ -62,7 +62,7 @@
 
                <div class="form-group">
                    <label for="productName">Product Name</label>
-                   <input type="textr" name="productName" value="{{ @$product ? $product->productName : '' }}" class="form-control">
+                   <input type="text" name="productName" value="{{ @$product ? $product->productName : '' }}" class="form-control">
                </div>
 
                <div class="form-group">

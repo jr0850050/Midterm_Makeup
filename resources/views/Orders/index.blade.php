@@ -41,11 +41,17 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>productID</th>
-                    <th>CategoryID</th>
-                    <th>productCode</th>
-                    <th>productName</th>
-                    <th>listPrice</th>
+                    <th>orderID</th>
+                    <th>customerID</th>
+                    <th>orderDate</th>
+                    <th>shipAmount</th>
+                    <th>taxAmount</th>
+                    <th>shipDate</th>
+                    <th>shipAddressID</th>
+                    <th>cardType</th>
+                    <th>cardNumber</th>
+                    <th>cardExpires</th>
+                    <th>billingAddressID</td>
                     <th style="width: 1px; white-space: nowrap;">
                         <i class="fa fa-cog"></i>
                     </th>
@@ -54,13 +60,18 @@
             <tbody>
                 @foreach($orders as $order)
                     <tr>
-                        <td>{{ $product->productID }}</td>
-                        <td>{{ $product->categoryID }}</td>
-                        <td>{{ $product->productCode }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->listPrice }}</td>
+                        <td>{{ $order->orderID }}</td>
+                        <td>{{ $order->customerID }}</td>
+                        <td>{{ $order->shipAmount }}</td>
+                        <td>{{ $order->taxAmount }}</td>
+                        <td>{{ $order->shipDate }}</td>
+                        <td>{{ $order->shipAddressID }}</td>
+                        <td>{{ $order->cardType }}</td>
+                        <td>{{ $order->cardNumber }}</td>
+                        <td>{{ $order->cardExpires }}</td>
+                        <td>{{ $order->billingAddressID }}</td>
                         <td>
-                            <a href="/Guitars/{{ $product->productID }}/edit" class="btn btn-xs btn-info">
+                            <a href="/Orders/{{ $order->orderID }}/edit" class="btn btn-xs btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>

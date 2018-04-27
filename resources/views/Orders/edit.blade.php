@@ -46,25 +46,55 @@
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             
-                <div class="form-group">
-                    <label for="categoryID">CategoryID</label>
-                    <input type="number" name="categoryID" value="{{ @$product ? $product->categoryID : '' }}" class="form-control">
-                </div>
+            <div class="form-group">
+                   <label for="customerID">customerID</label>
+                   <input type="number" name="customerID" value="{{ @$order ? $order->customerID : '' }}" class="form-control">
+               </div>
+
+               <div class="form-group">
+                   <label for="orderDate">order Date</label>
+                   <input type="text" name="orderDate" value="{{ @$order ? $order->orderDate : '' }}" class="form-control">
+               </div>
+
+               <div class="form-group">
+                   <label for="shipAmount">Shipping amount</label>
+                   <input type="number" name="shipAmount" value="{{ @$order ? $order->shipAmount : '' }}" class="form-control">
+               </div>
+
+               <div class="form-group">
+                   <label for="taxAmount">Tax Amount</label>
+                   <input type="number" name="taxAmount" value="{{ @$order ? $order->taxAmount : '' }}" class="form-control">
+               </div>
 
                 <div class="form-group">
-                    <label for="productCode">Product Code</label>
-                    <input type="text" name="productCode" value="{{ @$product ? $product->productCode : '' }}" class="form-control">
-                </div>
+                   <label for="shipDate">Shipping Date</label>
+                   <input type="number" name="shipDate" value="{{ @$order ? $order->shipDate : '' }}" class="form-control">
+               </div>
 
-                <div class="form-group">
-                    <label for="productName">Product Name</label>
-                    <input type="textr" name="productName" value="{{ @$product ? $product->productName : '' }}" class="form-control">
-                </div>
+               <div class="form-group">
+                   <label for="shipAddressID">Shipping Address ID</label>
+                   <input type="number" name="shipAddressID" value="{{ @$order ? $order->shipAddressID : '' }}" class="form-control">
+               </div>
 
-                <div class="form-group">
-                    <label for="listPrice">List Price</label>
-                    <input type="number" name="listPrice" value="{{ @$product ? $product->listPrice : '' }}" class="form-control">
-                </div>
+               <div class="form-group">
+                   <label for="cardType">card Type</label>
+                   <input type="text" name="cardType" value="{{ @$order ? $order->cardType : '' }}" class="form-control">
+               </div>
+
+               <div class="form-group">
+                   <label for="cardNumber">card Number</label>
+                   <input type="text" name="cardNumber" value="{{ @$order ? $order->cardNumber : '' }}" class="form-control">
+               </div>
+
+               <div class="form-group">
+                   <label for="cardExpires">Card Experation date</label>
+                   <input type="number" name="cardExpires" value="{{ @$order ? $order->cardExpires : '' }}" class="form-control">
+               </div>
+
+               <div class="form-group">
+                   <label for="billingAddressID">Billing Address ID</label>
+                   <input type="number" name="billingAddressID" value="{{ @$order ? $order->billingAddressID : '' }}" class="form-control">
+               </div>
 
             <button class="btn btn-primary pull-right">Save order</button>
         </form>
