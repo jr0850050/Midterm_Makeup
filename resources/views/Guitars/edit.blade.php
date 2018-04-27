@@ -8,6 +8,9 @@
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">
 
+<!-- custom css -->
+<link rel="stylesheet" type="text/css" href="/css/one-page-wonder.css">
+
 <!-- Custom fonts for this template -->
 <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -23,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('guitars.index') }}">Browse</a>
@@ -38,7 +41,7 @@
         <h3 class="panel-title">Edit item</h3>
     </div>
     <div class="panel-body">
-        <form action="" method="post">
+        <form action="/guitars/{{ $product->productID }}" method="post">
             <input type="hidden" name="_method" value="PATCH">
             {{ csrf_field() }}
             

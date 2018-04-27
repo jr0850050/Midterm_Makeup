@@ -37,14 +37,13 @@ class GuitarsController extends Controller
      */
     public function store(Request $request)
     {
-        /* $this->validate($request, [
-            'type' => 'required',
-            'title' => 'required',
-        ]); */
+        $this->validate($request, [
+            'productName' => 'required'
+        ]);
 
        $guitars = guitars::Create($request->all());
 
-       return redirect('/guitars/', $guitars->id);
+       return redirect('/guitars/', $products->id);
     }
 
     /**
@@ -53,7 +52,7 @@ class GuitarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(guitars $guitars)
+    public function show(Product $products)
     {
         return view('guitars.show', compact('guitars'));
     }
@@ -64,7 +63,7 @@ class GuitarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(guitars $guitars)
+    public function edit(Product $products)
     {
         return view('guitars.edit', compact('guitars'));
     }
@@ -80,7 +79,7 @@ class GuitarsController extends Controller
     {
         $guitars->update($request->all());
 
-        return redirect('/guitars/', $guitars->id);
+        return redirect('/guitars/', $products->id);
     }
 
     /**
@@ -91,7 +90,7 @@ class GuitarsController extends Controller
      */
     public function destroy($id)
     {
-        $guitars->delete();
+        $products->delete();
 
         return redirect ('/guitars/');
     }

@@ -123,98 +123,41 @@
   <br></br>
   <br></br>
   <br></br>
-   <div class="table">
-    
-    <div class="row header green">
-      <div class="cell">
-        Product
-      </div>
-      <div class="cell">
-        Unit Price
-      </div>
-      <div class="cell">
-        Quantity
-      </div>
-      <div class="cell">
-        Date Sold
-      </div>
-      <div class="cell">
-        Status
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Product">
-        Solid oak work table
-      </div>
-      <div class="cell" data-title="Unit Price">
-        $800
-      </div>
-      <div class="cell" data-title="Quantity">
-        10
-      </div>
-      <div class="cell" data-title="Date Sold">
-        03/15/2014
-      </div>
-      <div class="cell" data-title="Status">
-        Waiting for Pickup
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Product">
-        Leather iPhone wallet
-      </div>
-      <div class="cell" data-title="Unit Price">
-        $45
-      </div>
-      <div class="cell" data-title="Quantity">
-        120
-      </div>
-      <div class="cell" data-title="Date Sold">
-        02/28/2014
-      </div>
-      <div class="cell" data-title="Status">
-        In Transit
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Product">
-        27" Apple Thunderbolt displays
-      </div>
-      <div class="cell" data-title="Unit Price">
-        $1000
-      </div>
-      <div class="cell" data-title="Quantity">
-        25
-      </div>
-      <div class="cell" data-title="Date Sold">
-        02/10/2014
-      </div>
-      <div class="cell" data-title="Status">
-        Delivered
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="cell" data-title="Product">
-        Bose studio headphones
-      </div>
-      <div class="cell" data-title="Unit Price">
-        $60
-      </div>
-      <div class="cell" data-title="Quantity">
-        90
-      </div>
-      <div class="cell" data-title="Date Sold">
-        01/14/2014
-      </div>
-      <div class="cell" data-title="Status">
-        Delivered
-      </div>
-    </div>
-    
-  </div>
 
+      <div class="row header green">
+        <div class="panel-heading">
+            <a href="/guitars/create" class="btn btn-xs btn-success pull-right"><i class="fa fa-plus"></i></a>
+            <h3 class="panel-title">Browse all products</h3>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>productID</th>
+                    <th>CategoryID</th>
+                    <th>productCode</th>
+                    <th>productName</th>
+                    <th>listPrice</th>
+                    <!-- <th style="width: 1px; white-space: nowrap;">
+                        <i class="fa fa-cog"></i>
+                    </th> -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($products as $product)
+                    <tr>
+                        <td>{{ $product->productID }}</td>
+                        <td>{{ $product->categoryID }}</td>
+                        <td>{{ $product->productCode }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->listPrice }}</td>
+                        <td>
+                            <a href="/Guitars/{{ $product->productID }}/edit" class="btn btn-xs btn-info">
+                                <i class="fa fa-edit"></i>
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 </html>

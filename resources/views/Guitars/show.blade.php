@@ -23,7 +23,7 @@
        <div class="collapse navbar-collapse" id="navbarResponsive">
          <ul class="navbar-nav ml-auto">
            <li class="nav-item">
-             <a class="nav-link" href="#">Home</a>
+             <a class="nav-link" href="{{ route('home') }}">Home</a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="{{ route('guitars.index') }}">Browse</a>
@@ -33,7 +33,16 @@
      </div>
    </nav>
 
-   <!-- ??? -->
+    {{ $product->toJson() }}
+
+   <form action="/guitars/{{ $product->id }}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    {{ csrf_field() }}
+
+    <button class="btn btn-danger">
+        <i class="fa fa-trash-o"></i>
+    </button>
+</form>
 
    
    </div>
