@@ -47,22 +47,22 @@
             
                 <div class="form-group">
                     <label for="CategoryID">CategoryID</label>
-                    <input type="text" name="CategoryID" value="" class="form-control">
+                    <input type="text" name="CategoryID" value="{{ @$product ? $product->categoryID : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="productCode">Product Code</label>
-                    <input type="text" name="productCode" value="" class="form-control">
+                    <input type="text" name="productCode" value="{{ @$product ? $product->productCode : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="productName">Product Name</label>
-                    <input type="textr" name="productName" value="" class="form-control">
+                    <input type="textr" name="productName" value="{{ @$product ? $product->productName : '' }}" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="listPrice">List Price</label>
-                    <input type="number" name="listPrice" value="" class="form-control">
+                    <input type="number" name="listPrice" value="{{ @$product ? $product->listPrice : '' }}" class="form-control">
                 </div>
 
             <button class="btn btn-primary pull-right">Save item</button>

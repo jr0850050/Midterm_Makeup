@@ -8,9 +8,9 @@ class Product extends Model
 {
     protected $primaryKey = 'productID';
     protected $fillable = [
-    categoryID,
-    productCode,
-    productName,
-    listPrice,
+    'categoryID',
+    'productCode',
+    'productName',
+    'listPrice',
     ];
 }
