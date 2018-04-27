@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\Order;
 
-class GuitarsController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class GuitarsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $orders = Order::all();
 
-        return view('Guitars.index', compact('products'));
+        return view('Orders.index', compact('orders'));
     }
 
     /**
@@ -26,7 +26,7 @@ class GuitarsController extends Controller
      */
     public function create()
     {
-        return view('guitars.create');
+        return view('Orders.create');
     }
 
     /**
@@ -38,12 +38,12 @@ class GuitarsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'productName' => 'required'
+            'orderDate' => 'required'
         ]);
 
-       $products = Product::Create($request->all());
+       $orders = Order::Create($request->all());
 
-       return redirect('/guitars/' . $products->productID);
+       return redirect('/orders/' . $orders->orderID);
     }
 
     /**
@@ -52,9 +52,9 @@ class GuitarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $products)
+    public function show(Order $orders)
     {
-        return view('guitars.show', compact('products'));
+        return view('orders.show', compact('orders'));
     }
 
     /**
@@ -63,9 +63,9 @@ class GuitarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $products)
+    public function edit(Order $orders)
     {
-        return view('guitars.edit', compact('products'));
+        return view('orders.edit', compact('orders'));
     }
 
     /**
@@ -75,11 +75,11 @@ class GuitarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $products)
+    public function update(Request $request, Order $orders)
     {
-        $products->update($request->all());
+        $orders->update($request->all());
 
-        return redirect('/guitars/'. $products->productID);
+        return redirect('/orders/'. $orders->orderID);
     }
 
     /**
@@ -90,8 +90,8 @@ class GuitarsController extends Controller
      */
     public function destroy($id)
     {
-        $products->delete();
+        $orders->delete();
 
-        return redirect ('/guitars/');
+        return redirect ('/orders/');
     }
 }

@@ -36,7 +36,7 @@
 
     <div class="panel">
     <div class="panel-heading">
-        <h3 class="panel-title">Edit item</h3>
+        <h3 class="panel-title">Edit order</h3>
     </div>
     <div class="panel-body">
         <form action="/guitars/{{ $product->productID }}" method="post">
@@ -63,7 +63,7 @@
                     <input type="number" name="listPrice" value="{{ @$product ? $product->listPrice : '' }}" class="form-control">
                 </div>
 
-            <button class="btn btn-primary pull-right">Save item</button>
+            <button class="btn btn-primary pull-right">Save order</button>
         </form>
 
     

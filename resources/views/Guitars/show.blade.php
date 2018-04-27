@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/one-page-wonder.css">
+  <link rel="stylesheet" type="text/css" href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
 
 <!-- Custom fonts for this template -->
 <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -33,9 +33,13 @@
      </div>
    </nav>
 
-    {{ $product->toJson() }}
+<br></br>
+<br></br>
+<br></br>
 
-   <form action="/guitars/{{ $product->id }}" method="post">
+    {{ $products->toJson() }}
+
+   <form action="/guitars/{{ $products->productID }}" method="post">
     <input type="hidden" name="_method" value="delete">
     {{ csrf_field() }}
 
