@@ -63,9 +63,9 @@ class GuitarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $products)
+    public function edit(Product $product)
     {
-        return view('guitars.edit', compact('products'));
+        return view('guitars.edit', compact('product'));
     }
 
     /**
