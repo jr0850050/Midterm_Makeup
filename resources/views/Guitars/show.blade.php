@@ -28,6 +28,9 @@
            <li class="nav-item">
              <a class="nav-link" href="{{ route('guitars.index') }}">Browse</a>
            </li>
+           <li class="nav-item">
+              <a class="nav-link" href="{{ route('orders.index') }}">Browse orders</a>
+            </li>
          </ul>
        </div>
      </div>
