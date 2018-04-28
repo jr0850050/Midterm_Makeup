@@ -68,7 +68,7 @@
 
                 <div class="form-group">
                    <label for="shipDate">Shipping Date</label>
-                   <input type="number" name="shipDate" value="{{ @$order ? $order->shipDate : '' }}" class="form-control">
+                   <input type="text" name="shipDate" value="{{ @$order ? $order->shipDate : '' }}" class="form-control">
                </div>
 
                <div class="form-group">
@@ -88,7 +88,7 @@
 
                <div class="form-group">
                    <label for="cardExpires">Card Experation date</label>
-                   <input type="number" name="cardExpires" value="{{ @$order ? $order->cardExpires : '' }}" class="form-control">
+                   <input type="text" name="cardExpires" value="{{ @$order ? $order->cardExpires : '' }}" class="form-control">
                </div>
 
                <div class="form-group">

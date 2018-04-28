@@ -56,7 +56,7 @@
                </div>
 
                <div class="form-group">
-                   <label for="orderDate">order Date</label>
+                   <label for="orderDate">order Date (Format it like yyyy-mm-dd hh:mm:ss)</label>
                    <input type="text" name="orderDate" value="{{ @$order ? $order->orderDate : '' }}" class="form-control">
                </div>
 
@@ -71,8 +71,8 @@
                </div>
 
                 <div class="form-group">
-                   <label for="shipDate">Shipping Date</label>
-                   <input type="number" name="shipDate" value="{{ @$order ? $order->shipDate : '' }}" class="form-control">
+                   <label for="shipDate">Shipping Date (Format it like yyyy-mm-dd hh:mm:ss)</label>
+                   <input type="text" name="shipDate" value="{{ @$order ? $order->shipDate : '' }}" class="form-control">
                </div>
 
                <div class="form-group">
@@ -86,13 +86,13 @@
                </div>
 
                <div class="form-group">
-                   <label for="cardNumber">card Number</label>
+                   <label for="cardNumber">card Number (16 digits)</label>
                    <input type="text" name="cardNumber" value="{{ @$order ? $order->cardNumber : '' }}" class="form-control">
                </div>
 
                <div class="form-group">
-                   <label for="cardExpires">Card Experation date</label>
-                   <input type="number" name="cardExpires" value="{{ @$order ? $order->cardExpires : '' }}" class="form-control">
+                   <label for="cardExpires">Card Experation (mm/yyyy)</label>
+                   <input type="text" name="cardExpires" value="{{ @$order ? $order->cardExpires : '' }}" class="form-control">
                </div>
 
                <div class="form-group">
