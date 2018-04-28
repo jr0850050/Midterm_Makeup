@@ -21,7 +21,7 @@ class Order extends Model
     'billingAddressID',
     ];
 
-    public function setCardNumberAttribute($value)
+/*     public function setCardNumberAttribute($value)
     {
         $this->attributes['cardNumber'] = Crypt::encryptString($value);
     }
@@ -29,5 +29,5 @@ class Order extends Model
     public function getCardNumberAttribute($value)
     {
         return Crypt::decryptString($value);
-    }
+    } */
 }

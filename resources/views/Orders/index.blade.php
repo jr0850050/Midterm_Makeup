@@ -81,4 +81,55 @@
                 @endforeach
             </tbody>
         </table>
+
+<h2>View orders unshipped</h2>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>orderID</th>
+                    <th>customerID</th>
+                    <th>orderDate</th>
+                    <th>shipAmount</th>
+                    <th>taxAmount</th>
+                    <th>shipDate</th>
+                    <th>shipAddressID</th>
+                    <th>cardType</th>
+                    <th>cardNumber</th>
+                    <th>cardExpires</th>
+                    <th>billingAddressID</td>
+                    <th style="width: 1px; white-space: nowrap;">
+                        <i class="fa fa-cog"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                $orders = DB::table('orders')->where('shipDate', '0000-00-00 00:00:00')
+                foreach ($orders as $order) {
+                    echo $order;
+                }
+
+                @foreach($orders as $order)
+                    <tr>
+                        <td>{{ $order->orderID }}</td>
+                        <td>{{ $order->customerID }}</td>
+                        <td>{{ $order->orderDate }}</td>
+                        <td>{{ $order->shipAmount }}</td>
+                        <td>{{ $order->taxAmount }}</td>
+                        <td>{{ $order->shipDate }}</td>
+                        <td>{{ $order->shipAddressID }}</td>
+                        <td>{{ $order->cardType }}</td>
+                        <td>{{ $order->cardNumber }}</td>
+                        <td>{{ $order->cardExpires }}</td>
+                        <td>{{ $order->billingAddressID }}</td>
+                        <td>
+                            <a href="/orders/{{ $order->orderID }}/edit" class="btn btn-xs btn-info">
+                                <i class="fa fa-edit"></i>
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
 </html>
