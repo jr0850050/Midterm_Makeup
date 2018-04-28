@@ -58,7 +58,7 @@ class OrdersController extends Controller
         //     foreach ($orders as $order) {
         //         echo $order;
         //     }
-        
+
         return view('orders.show', compact('orders'));
     }
 
@@ -70,7 +70,7 @@ class OrdersController extends Controller
      */
     public function edit(Order $order)
     {
-        return view('orders.edit', compact('order'));
+        return view('Orders.edit', compact('order'));
     }
 
     /**
