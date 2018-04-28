@@ -82,7 +82,7 @@
             </tbody>
         </table>
 
-<h2>View orders unshipped</h2>
+<!-- <h2>View orders unshipped</h2>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -102,13 +102,13 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> -->
                 <!-- $orders = DB::table('orders')->where('shipDate', '0000-00-00 00:00:00')
                 foreach ($orders as $order) {
                     echo $order;
                 } -->
 
-                @foreach($orders as $order)
+                <!-- @foreach($orders as $order)
                     <tr>
                         <td>{{ $order->orderID }}</td>
                         <td>{{ $order->customerID }}</td>
@@ -130,6 +130,6 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table> -->
 
 </html>
