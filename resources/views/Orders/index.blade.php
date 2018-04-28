@@ -103,10 +103,10 @@
                 </tr>
             </thead>
             <tbody>
-                $orders = DB::table('orders')->where('shipDate', '0000-00-00 00:00:00')
+                <!-- $orders = DB::table('orders')->where('shipDate', '0000-00-00 00:00:00')
                 foreach ($orders as $order) {
                     echo $order;
-                }
+                } -->
 
                 @foreach($orders as $order)
                     <tr>
