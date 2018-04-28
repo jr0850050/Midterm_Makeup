@@ -72,7 +72,7 @@
                         <td>{{ $order->cardExpires }}</td>
                         <td>{{ $order->billingAddressID }}</td>
                         <td>
-                            <a href="/orders/{{ $order->orderID }}/edit" class="btn btn-xs btn-info">
+                            <a href="/orders/{{ $orders->orderID }}/edit" class="btn btn-xs btn-info">
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </a>
