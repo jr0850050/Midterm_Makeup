@@ -70,7 +70,7 @@ class OrdersController extends Controller
      */
     public function edit(Order $order)
     {
-        return view('Orders.edit', compact('order'));
+        return view('orders.edit', compact('order'));
     }
 
     /**
