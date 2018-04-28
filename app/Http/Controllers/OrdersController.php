@@ -58,6 +58,7 @@ class OrdersController extends Controller
         //     foreach ($orders as $order) {
         //         echo $order;
         //     }
+        
         return view('orders.show', compact('orders'));
     }
 
