@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Support\Facade\Crypt;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -21,11 +20,11 @@ class Order extends Model
     'billingAddressID',
     ];
 
-/*     public function setCardNumberAttribute($value)
+     public function setCardNumberAttribute($value)
     {
-        $this->attributes['cardNumber'] = Crypt::encryptString($value);
+        $this->attributes['cardNumber'] = '****************';
     }
-
+    /*
     public function getCardNumberAttribute($value)
     {
         return Crypt::decryptString($value);

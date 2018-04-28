@@ -54,6 +54,10 @@ class OrdersController extends Controller
      */
     public function show(Order $orders)
     {
+        // $orders = DB::table('orders')->where('shipDate', '0000-00-00 00:00:00');
+        //     foreach ($orders as $order) {
+        //         echo $order;
+        //     }
         return view('orders.show', compact('orders'));
     }
 

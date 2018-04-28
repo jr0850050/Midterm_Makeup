@@ -42,6 +42,8 @@
 
     {{ $orders->toJson() }}
 
+    DB::table('orders')->toSql();
+
    <form action="/orders/{{ $orders->orderID }}" method="post">
     <input type="hidden" name="_method" value="delete">
     {{ csrf_field() }}
